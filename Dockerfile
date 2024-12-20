@@ -22,6 +22,7 @@ RUN yarn build
 # Optionally expose a volume for logs (commented out)
 # VOLUME [ "/var/app/log" ]
 # VOLUME [ "/root/.pm2/logs" ]
+EXPOSE 3002
 
 # Command to start the app in development mode
 CMD ["yarn", "dev"]
