@@ -30,7 +30,10 @@ const ButtonGroup = (props: TButtonGroupProps) => {
 					{faq_btnGroup.map((btn, index) => (
 						<div
 							key={btn.id}
-							ref={el => btnRefs.current[index] = el}
+							//ref={el => btnRefs.current[index] = el}
+							ref={(el: HTMLDivElement | null) => {
+								  btnRefs.current[index] = el;
+								}}
 							className="inline-block h-9 lg:contents"
 						>
 							<Link
