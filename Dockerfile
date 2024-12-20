@@ -1,4 +1,5 @@
-FROM node:18-slim
+FROM node:20-slim
+#FROM node:18-slim
 
 # Install PM2 globally (optional if you use PM2 to run the app in production)
 RUN npm install -g pm2@4
