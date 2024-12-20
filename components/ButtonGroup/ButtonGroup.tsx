@@ -29,6 +29,7 @@ const ButtonGroup = (props: TButtonGroupProps) => {
 		onButtonClick(id);
 	};
 
+<<<<<<< HEAD
 	return (
 		<div className="flex justify-center overflow-x-auto no-scrollbar" style={{ scrollbarWidth: 'none' }}>
 			<div className="inline-flex space-x-0 w-auto mt-4 lg:mt-0">
@@ -47,6 +48,19 @@ const ButtonGroup = (props: TButtonGroupProps) => {
 								${activeBtn === btn.id ? 'relative border-b-2 border-transparent border-0 bg-gradient-to-r from-[#00D27A] to-[#50E468] text-white' : 'bg-white hover:bg-gray-100'}
 								whitespace-nowrap
 							`}
+=======
+    return (
+			<div className="flex justify-center overflow-x-auto no-scrollbar" style={{scrollbarWidth: 'none'}}>
+				<div className="inline-flex space-x-2 w-[21em] sm:w-[32em] md:w-[37em] lg:space-x-0 lg:w-auto">
+					{faq_btnGroup.map((btn, index) => (
+						<div
+							key={btn.id}
+							//ref={el => btnRefs.current[index] = el}
+							ref={(el: HTMLDivElement | null) => {
+								  btnRefs.current[index] = el;
+								}}
+							className="inline-block h-9 lg:contents"
+>>>>>>> 3636def19a10213937fa1e9005c149b2b06ecd54
 						>
 							{btn.label}
 						</Link>
