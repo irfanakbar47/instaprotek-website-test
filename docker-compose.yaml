@@ -6,7 +6,7 @@ services:
       context: .                  # Path to the directory containing the Dockerfile
       dockerfile: Dockerfile      # (Optional) If the Dockerfile has a custom name or location
     ports:
-      - "3002:3002"               # Expose port 3002
+      - "3002:3000"               # Expose port 3002
     environment:
       - NODE_ENV=development      # Example environment variable
     deploy:
