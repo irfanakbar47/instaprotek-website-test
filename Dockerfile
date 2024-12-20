@@ -1,15 +1,23 @@
-FROM node:18-slim
-
-RUN npm install -g pm2@4
-
+# Stage 1: Build
+FROM node:18-slim AS build
 
 WORKDIR /var/app
-COPY package.json /var/app/package.json
-RUN yarn 
-COPY ./ /var/app
-# RUN npm install -D @swc/cli @swc/core
+
+COPY package.json yarn.lock ./
+RUN yarn install --frozen-lockfile
+
+COPY ./ ./
 RUN yarn build
 
-#VOLUME [ "/var/app/log" ]
-#VOLUME [ "/root/.pm2/logs" ]
-CMD ["yarn", "dev"]
+# Stage 2: Production
+FROM node:18-slim
+
+WORKDIR /var/app
+
+# Copy only the necessary files from the build stage
+COPY --from=build /var/app /var/app
+RUN yarn install --production --frozen-lockfile
+
+EXPOSE 3000
+
+CMD ["yarn", "start"]
