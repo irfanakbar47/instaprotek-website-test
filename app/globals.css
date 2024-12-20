@@ -1,0 +1,131 @@
+
+@tailwind components;
+@tailwind utilities;
+@tailwind base;
+@layer base {
+	html, body {
+		@apply font-inter text-lg font-light m-0 scroll-smooth overflow-x-hidden;
+	}
+	p, h1, h2, h3, h4, h5, h6, ul {
+		@apply font-inter m-0;
+	}
+	ul {
+		list-style: none;
+	}
+}
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+.maxContent {
+	@apply w-auto max-w-contentMini px-3 xl:px-0 sm:max-w-contentMobile md:max-w-contentTab lg:max-w-contentDesktop mx-auto;
+}
+.maxResources {
+	@apply w-auto mx-auto max-w-resourcesMini sm:max-w-resourcesMobile md:max-w-resourcesTab lg:max-w-resourcesDesktop;
+}
+.maxForm {
+	@apply w-full mx-auto max-w-formMini px-3 xl:px-0 sm:max-w-formMobile md:max-w-formTab lg:max-w-formDesktop; 
+}
+.maxHero {
+	@apply w-auto max-w-contentMini px-3 xl:px-0 sm:max-w-contentMobile md:max-w-contentTab lg:max-w-heroDesktop mx-auto;
+}
+
+.platform-circle {
+	@apply absolute flex text-center items-center p-5 text-2xs leading-[24px] bg-blue-primary1 text-white rounded-full w-[140px] h-[140px] md:w-[160px] md:h-[160px] md:text-sm lg:w-[200px] lg:h-[200px] lg:text-lg;
+}
+
+.footer_socmed-icons {
+	@apply flex items-center justify-center bg-white w-[32px] h-[32px] rounded-[6px] text-blue-primary1;
+}
+
+.faq-troubleshoot-style {
+  list-style: none;
+  counter-reset: sublist-counter; 
+}
+.faq-troubleshoot-style li {
+  position: relative;
+  margin-bottom: 1em; 
+}
+.faq-troubleshoot-style li::before {
+	content: counter(sublist-counter);
+	counter-increment: sublist-counter;
+	position: absolute;
+	left: -2em;
+	background-color: #2896eb;
+	width: 1rem;
+	height: 1rem;
+	border-radius: 50%;
+	color: #fff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-weight: bold;
+	font-size: 0.75rem;
+	margin-top: 0.2rem;
+}
+
+.square-bullet {
+	list-style-type: square;
+}
+
+.hide-scrollbar {
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+}
+.hide-scrollbar::-webkit-scrollbar {
+	display: none;
+}
+.transition-fade-slide {
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+  -webkit-transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+  -moz-transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+  -ms-transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+  -o-transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+.transition-fade-slide-show {
+  opacity: 1;
+  transform: translateY(0);
+}
+.transition-fade-slide-hide {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+.support-app-img {
+	display: flex; 
+	justify-content: center; 
+	column-gap: 4em;
+
+	img {
+		width: 100%;
+		height: 56px;
+	}
+}
+@media screen and (min-width: 430px) {
+	.support-app-img {
+		display: flex; 
+		justify-content: space-between; 
+		column-gap: 0;
+	
+		img {
+			width: 140px;
+			height: auto;
+		}
+	}
+}
+@media screen and (min-width: 768px) {
+	.support-app-img {
+		display: flex; 
+		justify-content: space-evenly; 
+		column-gap: 0;
+	
+		img {
+			width: 200px;
+			height: auto;
+		}
+	}
+}
