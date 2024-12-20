@@ -17,3 +17,8 @@ services:
           memory: 512M
       restart_policy:
         condition: on-failure
+    networks:
+      - dokploy-network
+networks:
+  dokploy-network:
+    external: true
