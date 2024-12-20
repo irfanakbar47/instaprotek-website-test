@@ -11,7 +11,7 @@ const ContentSection = (props: ContentSectionType) => {
 
 	return (
 		<section id={id}>
-			<h2 className={`text-xl font-bold ${style}`}>{title}</h2>
+			<h2 className={`text-xl font-bold leading-6 py-4 ${style}`}>{title}</h2>
 			<div className="space-y-4">
 				{children}
 			</div>

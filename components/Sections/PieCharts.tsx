@@ -8,6 +8,7 @@ const PieCharts = () => {
 			id="pie-charts-section"
 			title="Review Conversion Rate Comparison"
 			description="60% success rate, based on customers who register"
+			containerStyle="py-0 lg:py-[3em] "
 		>
 			<div className="flex flex-col max-w-[600px] maxContent gap-y-20">
 				<div className="flex justify-center flex-col gap-y-16 lg:flex-row lg:gap-x-32">

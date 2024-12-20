@@ -1,8 +1,10 @@
 import Button from './Button/Button';
 import Footer from './Footer/Footer';
+import AltFooter from './Footer/AltFooter';
 import Hero from './Hero/Hero';
 import HeroV2 from './Hero/HeroV2';
 import Navbar from './Navbar/Navbar';
+import AltNavbar from './Navbar/AltNavbar';
 import SectionLayoutV1 from './Sections/SectionLayoutV1';
 import SectionV2 from './Sections/SectionV2';
 import SectionV3 from './Sections/SectionV3';
@@ -24,13 +26,25 @@ import ScrollToTopButton from './ScrollToTopButton/ScrollToTopButton';
 import Carousel from './Carousel/Carousel';
 import CustomImage from './CustomImage/CustomImage';
 import Cookies from './Cookies/Cookies';
+import Modal from './Modal/Modal';
+import ContactForm from './Sections/ContactForm';
+import Description from './Description/Description';
+import ReviewMessage from './ReviewMessage/ReviewMessage';
+import StarRating from './StarRating/StarRating';
+import ErrorProductPage from './ErrorProductPage/ErrorProductPage';
+import RepurchaseProgramPage from './RepurchaseProgramPage/RepurchaseProgramPage';
+import CustomerReviewsSection from './ProductPageSections/CustomerReviewsSection';
+import ProductSection from './ProductPageSections/ProductSection';
+import ReviewsSection from './ProductPageSections/ReviewsSection';
 
 export {
 	Button,
 	Footer,
+	AltFooter,
 	Hero,
 	HeroV2,
 	Navbar,
+	AltNavbar,
 	SectionLayoutV1,
 	SectionV2,
 	SectionV3,
@@ -51,5 +65,15 @@ export {
 	ScrollToTopButton,
 	Carousel,
 	CustomImage,
-	Cookies
+	Cookies,
+	Modal,
+	ContactForm,
+	Description,
+	ReviewMessage,
+	StarRating,
+	ErrorProductPage,
+	RepurchaseProgramPage,
+	CustomerReviewsSection,
+	ProductSection,
+	ReviewsSection,
 }

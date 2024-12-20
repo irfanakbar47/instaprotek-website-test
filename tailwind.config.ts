@@ -14,7 +14,7 @@ const config: Config = {
 				tablet: '768px',
 			},
       fontFamily: {
-        'inter': ['Inter', 'sans-serif'],
+        'inter': ['var(--font-inter)'],
       },
 			fontSize: {
 				'3xs': ['10px', {
@@ -42,7 +42,7 @@ const config: Config = {
 					letterSpacing: '0',
 				}],
 				'xl': ['20px', {
-					lineHeight: '0px',
+					lineHeight: '55px',
 					letterSpacing: '0',
 				}],
 				'1xl': ['24px', {
@@ -84,7 +84,10 @@ const config: Config = {
 				gray: {
 					'5': '#D3D3D3',
 					'10': '#343434',
-					'15': '#9E9E9E'
+					'15': '#9E9E9E',
+					'20': '#404040',
+					'25': '#333333',
+					'30': '#808080'
 				},
 				brown: {
 					'5': '#8C6239',
@@ -103,49 +106,62 @@ const config: Config = {
 				'resourcesDesktop': '1040px',
 				'formDesktop': '800px',
 				'heroDesktop': '960px',
+				'articlesDesktop': '1320px',
 
 				// TABLET
 				'contentTab': '700px',
 				'resourcesTab': '1040px',
 				'formTab': '800px',
+				'articlesTab': '700px',
 
 				// MOBILE
 				'contentMobile': '640px',
 				'resourcesMobile': '1040px',
 				'formMobile': '800px',
+				'articlesMobile': '640px',
 
 				// MINI
 				'contentMini': '400px',
 				'resourcesMini': '1040px',
 				'formMini': '800px',
+				'articlesMini': '400px',
 			},
 			maxWidth: {
 				// DESKTOP
 				'contentDesktop': '1320px',
+				// 'contentDesktop': '1100px',
 				'resourcesDesktop': '1040px',
 				'formDesktop': '800px',
 				'heroDesktop': '960px',
+				'articlesDesktop': '1320px',
 
 				// TABLET
 				'contentTab': '700px',
 				'resourcesTab': '1040px',
 				'formTab': '800px',
+				'articlesTab': '700px',
 
 				// MOBILE
 				'contentMobile': '600px',
 				'resourcesMobile': '1040px',
 				'formMobile': '800px',
+				'articlesMobile': '600px',
 
 				// MINI
 				'contentMini': '400px',
 				'resourcesMini': '1040px',
 				'formMini': '800px',
+				'articlesMini': '400px',
 			},
 			backgroundSize: {
 				'1': '38em'
+			},
+			boxShadow: {
+				'nav2': '0px 2px 10px rgba(0, 0, 0, 0.3)'
 			}
     },
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/typography')],
 };
+
 export default config;

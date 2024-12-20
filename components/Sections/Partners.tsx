@@ -5,8 +5,8 @@ import React from 'react'
 const Partners = () => {
   return (
     <section className="relative overflow-hidden">
-      <div className="flex flex-col items-center w-full maxContent gap-y-5">
-        <h3 className="text-base lg:text-xl font-semibold mt-10">Used daily by small and large businesses.</h3>
+      <div className="flex flex-col items-center w-full maxContent gap-y-5 my-10">
+        <h3 className="text-base lg:text-xl font-semibold text-blue-primary1">Used daily by small and large businesses.</h3>
         <ul className="flex justify-evenly">
           <Carousel>
             {partner_companies.map((company) => (

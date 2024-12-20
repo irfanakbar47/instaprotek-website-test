@@ -11,8 +11,8 @@ const Button = (props: IButtonProps) => {
 		<button
 			type={type}
 			onClick={onClick}
-			className={`flex items-center rounded px-4 py-2 border-0 text-white font-normal gap-x-3 drop-shadow-md transition duration-200 ease-in-out hover:drop-shadow-lg hover:scale-[1.03] ${customStyle} ${!bgColor && 'bg-insta-gradient'}`}>
-			{iconPos === 'left' && icon}{label}{iconPos === 'right' && icon}
+			className={`appearance-none flex items-center rounded px-4 py-2 border-0 text-white font-normal gap-x-3 transition duration-200 ease-in-out hover:drop-shadow-lg hover:scale-[1.03] noselect ${customStyle} ${!bgColor ? 'bg-insta-gradient' : bgColor}`}>
+			<span className='flex items-center mx-auto'>{iconPos === 'left' && icon}{label}{iconPos === 'right' && icon}</span> 
 		</button>
 	)
 }

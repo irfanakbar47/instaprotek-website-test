@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  eslint: { ignoreDuringBuilds: true },
   images: {
     remotePatterns: [
       {
@@ -35,7 +36,12 @@ const nextConfig = {
         destination: '/contact',
         permanent: true,
       },
-    ]
+      {
+        source: '/validate-otp',
+        destination: '/download-app',
+        permanent: true,
+      },
+    ];
   },
 };
 

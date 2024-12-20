@@ -9,9 +9,9 @@ const SectionLayoutV1 = (props: ISectionLayoutV1Props) => {
 	const { id, topTitle, title, description, contentStyle, containerStyle, children, topTitleStyle, titleStyle, descriptionStyle, ref, contentInnerStyle } = props
 	
 	return (
-		<section id={id} ref={ref} className={`relative py-20 lg:py-[3em] lg:overflow-hidden ${containerStyle}`}>
+		<section id={id} ref={ref} className={`relative py-5 lg:py-[3em] lg:overflow-hidden ${containerStyle}`}>
 			<div className={`flex mx-auto ${contentStyle}`}>
-				<div className={`flex flex-col items-center maxContent text-center ${description ? 'gap-y-4 pb-[2em] lg:pb-[5em] lg:gap-y-8' : `pb-[5em]`} ${contentInnerStyle}`}>
+				<div className={`flex flex-col items-center maxContent text-center ${description ? 'gap-y-4 py-[2em] lg:pb-[5em] lg:gap-y-8' : `pb-[5em]`} ${contentInnerStyle}`}>
 
 					{topTitle && 
 						<div className="flex flex-col items-center">

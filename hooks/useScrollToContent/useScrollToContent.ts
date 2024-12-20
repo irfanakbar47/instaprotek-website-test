@@ -9,7 +9,7 @@ import { useState, useEffect, RefObject } from 'react';
  * @returns An object containing the states for showing scroll-to-top button, atBottom detection, and active section
  */
 
-const useScrollToContent = (contentRef: RefObject<HTMLDivElement> | null) => {
+const useScrollToContent = (contentRef: RefObject<HTMLElement | HTMLDivElement | null>) => {
   const [showScrollToTop, setShowScrollToTop] = useState(false);
   const [atBottom, setAtBottom] = useState(false);
   const [activeSection, setActiveSection] = useState<string>('');

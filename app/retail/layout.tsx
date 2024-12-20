@@ -11,7 +11,7 @@ export default function RetailLayout({
   children: React.ReactNode
 }) {
   return (
-    <section className="pb-[3em]">
+    <section>
       {children}
     </section>
   )

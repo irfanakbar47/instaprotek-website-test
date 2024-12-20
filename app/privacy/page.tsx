@@ -21,7 +21,7 @@ const Privacy = () => {
 
       <div
         id="privacy-content"
-        className="text-base gap-y-5 mt-10"
+        className="text-base gap-y-5 mt-5 text-blue-primary1"
       >
         <PrivacyPolicyContent />
         <CaliforniaPrivacyPolicy />

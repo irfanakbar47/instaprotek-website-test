@@ -1,0 +1,85 @@
+stages:
+  - build
+  - update_portainer_qa
+  - tag_production
+  - update_portainer_production
+
+master_build:
+  stage: build
+  variables:
+    REGISTRY_ADDRESS: 'registry.dnamicro.com'
+    REGISTRY_USERNAME: 'dna'
+    REGISTRY_PASSWORD: 'aBGioazrbkrFvG5XSdgB'
+  script:
+    - 'docker login $REGISTRY_ADDRESS -u $REGISTRY_USERNAME -p $REGISTRY_PASSWORD'
+    - "docker build -t $REGISTRY_ADDRESS/$CI_PROJECT_NAME:$CI_COMMIT_REF_NAME-$CI_PIPELINE_ID -f dockerfile \
+      --build-arg PROJECT=$CI_PROJECT_NAME ."
+    - 'docker tag $REGISTRY_ADDRESS/$CI_PROJECT_NAME:$CI_COMMIT_REF_NAME-$CI_PIPELINE_ID $REGISTRY_ADDRESS/$CI_PROJECT_NAME:$CI_COMMIT_REF_NAME'
+    - 'docker push $REGISTRY_ADDRESS/$CI_PROJECT_NAME:$CI_COMMIT_REF_NAME-$CI_PIPELINE_ID'
+    - 'docker push $REGISTRY_ADDRESS/$CI_PROJECT_NAME:$CI_COMMIT_REF_NAME'
+  only:
+    - 'qa'
+    - 'production'
+
+update_stack:
+  stage: update_portainer_qa
+  variables:
+    ENDPOINT_ID: 2
+    STACK_ID: 42
+    PORTAINER_USERNAME: 'ops'
+    PORTAINER_PASSWORD: 'tLs&uG3p2L?rIvl'
+    PORTAINER_HOST: https://portainer.dnaqa.net
+    PORTAINER_YML_FILE: instaprotek-web.yml
+    REGISTRY_ADDRESS: 'registry.dnamicro.com'
+    FILE_PATH: /var/apps/portainer
+  script:
+    - PORTAINER_HOST=$PORTAINER_HOST portainer login -u $PORTAINER_USERNAME -p $PORTAINER_PASSWORD
+    - touch $FILE_PATH/$PORTAINER_YML_FILE
+    - rm -rf  $FILE_PATH/$PORTAINER_YML_FILE && PORTAINER_HOST=$PORTAINER_HOST portainer stackfile $STACK_ID $FILE_PATH/$PORTAINER_YML_FILE
+    - sed -i "s/${CI_PROJECT_NAME}:.*/${CI_PROJECT_NAME}:${CI_COMMIT_REF_NAME}-${CI_PIPELINE_ID}/g" $FILE_PATH/$PORTAINER_YML_FILE
+    - echo 'updating instaprotek website'
+    - PORTAINER_HOST=$PORTAINER_HOST portainer stack:update  $ENDPOINT_ID  $STACK_ID  $FILE_PATH/$PORTAINER_YML_FILE
+  only:
+    - 'qa'
+
+#============================== Production ================================================================
+
+# tag_production:
+#   stage: tag_production
+#   variables:
+#     REGISTRY_ADDRESS: 'registry.dnamicro.com'
+#     REGISTRY_USERNAME: 'dev'
+#     REGISTRY_PASSWORD: 'F0nch3rt0'
+#     BASE_REF_NAME: development
+#   script:
+#     - docker login $REGISTRY_ADDRESS -u $REGISTRY_USERNAME -p $REGISTRY_PASSWORD
+#     - docker pull $REGISTRY_ADDRESS/$CI_PROJECT_NAME:$BASE_REF_NAME
+#     - docker tag $REGISTRY_ADDRESS/$CI_PROJECT_NAME:$BASE_REF_NAME $REGISTRY_ADDRESS/$CI_PROJECT_NAME:$CI_COMMIT_REF_NAME-$CI_PIPELINE_ID
+#     - docker tag $REGISTRY_ADDRESS/$CI_PROJECT_NAME:$BASE_REF_NAME $REGISTRY_ADDRESS/$CI_PROJECT_NAME:$CI_COMMIT_REF_NAME
+#     - docker push $REGISTRY_ADDRESS/$CI_PROJECT_NAME:$CI_COMMIT_REF_NAME-$CI_PIPELINE_ID
+#     - docker push $REGISTRY_ADDRESS/$CI_PROJECT_NAME:$CI_COMMIT_REF_NAME
+#   only:
+#     - 'production'
+
+
+# update_stack_production:
+#   stage: update_portainer_production
+#   variables:
+#     ENDPOINT_ID: 2
+#     STACK_ID: 30
+#     PORTAINER_USERNAME: 'ci'
+#     PORTAINER_PASSWORD: 'hsNrUi93FwpHv6znT3Ub'
+#     PORTAINER_HOST: https://portainer.instaprotek.com
+#     PORTAINER_YML_FILE: instaprotek-web.yml
+#     REGISTRY_ADDRESS: 'registry.dnamicro.com'
+#     FILE_PATH: /var/apps/portainer
+#   script:
+#     - PORTAINER_HOST=$PORTAINER_HOST portainer login -u $PORTAINER_USERNAME -p $PORTAINER_PASSWORD
+#     - touch $FILE_PATH/$PORTAINER_YML_FILE
+#     - rm -rf  $FILE_PATH/$PORTAINER_YML_FILE && PORTAINER_HOST=$PORTAINER_HOST portainer stackfile $STACK_ID $FILE_PATH/$PORTAINER_YML_FILE
+#     - sed -i "s/${CI_PROJECT_NAME}:.*/${CI_PROJECT_NAME}:${CI_COMMIT_REF_NAME}-${CI_PIPELINE_ID}/g" $FILE_PATH/$PORTAINER_YML_FILE
+#     - echo 'updating instaprotek website'
+#     - PORTAINER_HOST=$PORTAINER_HOST portainer stack:update  $ENDPOINT_ID  $STACK_ID  $FILE_PATH/$PORTAINER_YML_FILE
+#   only:
+#     - 'production'
+

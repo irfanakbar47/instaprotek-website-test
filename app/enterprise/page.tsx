@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from "react";
-import { Hero, SectionLayoutV1, SectionV2, SectionV5 } from "@/components";
+import { Hero, SectionLayoutV1, SectionV2 } from "@/components";
 import { winning_solutions } from "@/constants";
 
 export default function Enterprise() {
@@ -20,16 +20,17 @@ export default function Enterprise() {
     <main className="">
       <Hero
         background="https://acdn.dnamicro.net/instaprotek/instaprotek-enterprise-banner.mp4"
-        heroTitle="instaProtek has strategically partnered with industry leaders to deliver the most robust, flexible, comprehensive enterprise device fleet management program ever developed."
-        customTitle="!mb-10"
+        heroTitle="instaProtek has Strategically Partnered with Industry Leaders to Deliver the most Robust, Flexible, Comprehensive Enterprise Device Fleet Management Program Ever Developed."
+        customTitle="mb-10"
         scrollTarget="winning-solutions"
       />
       <SectionLayoutV1
         id="winning-solutions"
         topTitle="Winning Solutions"
         description="Our plans provide flexible differentiators, reduced costs, and the right solutions for your customers’ mobile fleets and their employee-owned devices."
-				containerStyle="!py-0 !mb-[3em]"
+				containerStyle="!py-0 !mt-[3em]"
 				contentStyle="!mb-10"
+				contentInnerStyle="!pb-0"
       >
         {winning_solutions.map((a) => (
           <SectionV2
@@ -41,16 +42,10 @@ export default function Enterprise() {
             imgUrl={a.imgUrl}
             imgAlt={a.imgAlt}
             rowReverse={a.rowReverse}
-            contentStyle={a.containerStyle}
             onButtonClick={toggleSectionV5}
           />
         ))}
       </SectionLayoutV1>
-      {/* <div className="transition-wrapper">
-        <div className={`transition-fade-slide ${transitionClass}`}>
-          {isSectionV5Visible && <SectionV5 />}
-        </div>
-      </div> */}
     </main>
   );
 }

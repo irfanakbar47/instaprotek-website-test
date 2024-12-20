@@ -1,17 +1,29 @@
 'use client'
 
-import React from 'react'
+import React, { useState } from 'react'
 import { FaChevronRight } from "react-icons/fa6";
-import { Button, SectionLayoutV1 } from '@/components';
-import { blogs } from '@/data';
-import { card } from '@/constants';
+import { Button, CustomImage, SectionLayoutV1 } from '@/components';
+import { articles } from '@/data';
 import { useSmoothScroll } from '@/hooks';
 import { ISectionV3Props } from './SectionInterface';
+import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 const SectionV3 = (props: ISectionV3Props) => {
-	const {id, type, btnLabel, isBlogs, topTitle, title, description, containerStyle } = props;
-	const scrollTo = useSmoothScroll();
+	const { btnLabel, containerStyle, description, id, title, topTitle, type } = props;
 	
+	useSmoothScroll();
+	const router = useRouter();
+	const [onHover, setOnHover] = useState<number | null>(null);
+
+	const handleMouseOver = (index: number) => {
+		setOnHover(index);
+	}
+
+	const handleMouseOut = () => {
+		setOnHover(null);
+	}
+
 	return (
 		<SectionLayoutV1
 			id={id}
@@ -21,40 +33,37 @@ const SectionV3 = (props: ISectionV3Props) => {
 			containerStyle={containerStyle}
 		>
 			<div className="flex flex-col maxContent">
-				{isBlogs  ? (
-					<div className="flex justify-center flex-wrap gap-4 lg:gap-x-9 mx-auto mb-10"> 
-						{card.map((item) => (
-							<div key={item.id} className="relative rounded-[20px] overflow-hidden bg-no-repeat bg-cover bg-[35%] w-[160px] h-[260px] md:w-[240px] md:h-[340px] lg:w-[298px] lg:h-[421px]" style={{ backgroundImage: `url(${item.imgUrl})` }} aria-label={item.imgAlt}>
-								<div className="flex flex-col justify-end z-10 bg-card-overlay w-full h-full p-4">
-										<div className='flex flex-col gap-y-3'>
-											<p className='text-white text-base md:text-[20px]'>{item.title}</p>
-											{item.cardBtnLabel && 
-												<Button 
-													customStyle='justify-center text-xs md:text-base px-2 py-0.5 lg:px-4 lg:py-2' 
-													type="button" 
-													label={item.cardBtnLabel}
-													onClick={() => scrollTo(item.scrollTarget)} 
-												/>
-											}
-										</div>
+				<div className="maxArticle flex flex-wrap items-center gap-5 justify-center">
+					{articles.map((article, index) => (
+						<div key={article.id} className="relative rounded-[20px] overflow-hidden w-[160px] h-[260px] md:w-[240px] md:h-[340px] lg:w-[298px] lg:h-[421px]">
+							<Link
+								href={`/articles/${article.id}`}
+								className="relative flex w-full h-full"
+								onMouseOver={() => handleMouseOver(index)}
+								onMouseOut={handleMouseOut}
+							>
+								<CustomImage
+									src={article.imgUrl}
+									alt={article.imgAlt}
+									width={424}
+									height={420}
+									className={`w-full object-cover m-auto transition-transform duration-500 ease-in-out ${onHover === index ? "scale-105" : ""}`}
+									style={{ height: 'inherit' }}
+									priority
+								/>
+								<div className="flex flex-col justify-end px-4 py-5 gap-y-1 absolute bg-card-overlay w-full h-full cursor-pointer">
+									<h3 className="text-white text-base font-medium leading-[22px] lg:font-normal lg:leading-[24px] lg:text-lg">
+										{article.title}
+									</h3>
+									<p className="text-gray-5 text-xs font-medium lg:font-normal lg:text-sm">
+										{article.date}
+									</p>
 								</div>
-							</div>
-						))}
-					</div>
-				) : (
-					<div className="flex justify-center flex-wrap gap-4 lg:gap-x-9 mx-auto mb-10"> 
-						{blogs.map((blog) => (
-							<div key={blog.id} className="relative rounded-[20px] overflow-hidden bg-no-repeat bg-cover bg-[35%] w-[160px] h-[260px] md:w-[230px] md:h-[330px] lg:w-[298px] lg:h-[421px]" style={{ backgroundImage: `url(${blog.imgUrl})` }} aria-label={blog.imgAlt}>
-								<div className="flex flex-col justify-end z-10 bg-card-overlay w-full h-full p-4">
-									<div className='flex flex-col gap-y-3'>
-										<p className='text-white text-sm font-medium leading-[16px] lg:font-normal lg:leading-[24px] lg:text-base'>{blog.title}</p>
-										<h3 className='text-gray-5 text-xs font-medium lg:font-normal lg:text-sm'>{blog.date}</h3>
-									</div>
-								</div>
-							</div>
-						))}
-					</div>)}
-				{/* {btnLabel && <Button customStyle='mx-auto' type={type} label={btnLabel} icon={<FaChevronRight />} iconPos="right" />} */}
+							</Link>
+						</div>
+					))}
+				</div>
+				{btnLabel && <Button onClick={() => router.push('/articles')} customStyle='mx-auto mt-10' type={type} label={btnLabel} icon={<FaChevronRight className='ml-2' />} iconPos="right" />}
 			</div>
 		</SectionLayoutV1>
 	)

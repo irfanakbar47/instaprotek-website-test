@@ -16,28 +16,14 @@ export const nav_items = [{
 			id: "nav-technology-overview",
 			label: "Technology Overview",
 			href: "/technology-overview",
+			withSubMenu: true
 		},
-		// {
-		// 	id: "nav-resources",
-		// 	label: "Resources",
-		// 	href: "/",
-		// },
-		// {
-		// 	id: "nav-about",
-		// 	label: "About",
-		// 	href: "/",
-		// },
 		{
-			id: "nav-contact-us",
-			label: "Contact Us",
-			href: "/contact",
-		},
-		// {
-		// 	href: "/",
-		// 	id: "request_a_quote",
-		// 	label: "Request a Quote",
-		// 	className: "bg-insta-gradient rounded-[5px] px-[24.38px] py-[10px]"
-		// },
+			id: "nav-partner-with-us",
+			label: "Partner With Us",
+			href: "/partner-with-us",
+			withSubMenu: true
+		}
 	],
 	solutions_items: [
 		{
@@ -73,29 +59,83 @@ export const nav_items = [{
 					id: "product-guarantee",
 					label: "Product Guarantee",
 					href: "/retail#product-guarantee",
-					imgUrl: "https://acdn.dnamicro.net/instaprotek/instaprotek-products-retail-product-guarantee.png",
+					imgUrl: "https://acdn.dnamicro.net/instaprotek/instaprotek-retail-product-guaranteee.png",
 					imgAlt: 'instaProtek Retail Product Guarantee'
 				},
 				{
 					id: "warranty-management",
 					label: "Warranty Management",
 					href: "/retail#warranty-management",
-					imgUrl: "https://acdn.dnamicro.net/instaprotek/instaprotek-products-retail-warranty-management.png",
+					imgUrl: "https://acdn.dnamicro.net/instaprotek/instaprotek-retail-warranty-management.jpg",
 					imgAlt: 'instaProtek Retail Warranty Management'
 				},
 				{
 					id: "intelligent-analytics",
 					label: "Intelligent Analytics",
 					href: "/retail#intelligent-analytics",
-					imgUrl: "https://acdn.dnamicro.net/instaprotek/instaprotek-products-retail-intelligent-analytics.png",
+					imgUrl: "https://acdn.dnamicro.net/instaprotek/instaprotek-retail-intelligent-analytics.jpeg",
 					imgAlt: 'instaProtek Retail Intelligent Analytics'
 				},
 				{
-					id: "ai-driven-automated-product-reviews",
-					label: "Automated Product Reviews",
-					href: "/retail#ai-driven-automated-product-reviews",
-					imgUrl: "https://acdn.dnamicro.net/instaprotek/instaprotek-products-retail-automated-product-reviews.png",
+					id: "automated-product-reviews",
+					label: "AI Driven Automated Product Reviews",
+					href: "/retail#automated-product-reviews",
+					imgUrl: "https://acdn.dnamicro.net/instaprotek/instaprotek-retail-automated-product-reviews.png",
 					imgAlt: 'instaProtek Retail AI Driven Automated Product Reviews'
+				},
+			]
+		},
+		{
+			id: "nav-technology-overview",
+			sub_items: [
+				{
+					id: "technology-overview",
+					label: "Technology Overview",
+					href: "/technology-overview#technology-overview",
+					imgUrl: "https://acdn.dnamicro.net/instaprotek/instaprotek-tech-overview-section.png",
+					imgAlt: 'instaProtek Technology Overview'
+				},
+				{
+					id: "platform-overview",
+					label: "Platform Overview",
+					href: "/technology-overview#platform-overview",
+					imgUrl: "https://acdn.dnamicro.net/instaprotek/instaprotek-tech-overview-platform-overview-v2.png",
+					imgAlt: 'instaProtek Platform Overview'
+				},
+				{
+					id: "product-registration",
+					label: "Product Registration",
+					href: "/technology-overview#product-registration",
+					imgUrl: "https://acdn.dnamicro.net/instaprotek/nav_technology_overview-product_registration.png",
+					imgAlt: 'instaProtek Product Registration'
+				},
+				{
+					id: "service-requests",
+					label: "Service Requests",
+					href: "/technology-overview#service-requests",
+					imgUrl: "https://acdn.dnamicro.net/instaprotek/nav_technology_overview-service_request.png",
+					imgAlt: 'instaProtek Service Requests'
+				},
+				{
+					id: "customer-support",
+					label: "Customer Support",
+					href: "/technology-overview#customer-support",
+					imgUrl: "https://acdn.dnamicro.net/instaprotek/nav_technology_overview-customer_support.png",
+					imgAlt: 'instaProtek Customer Support'
+				},
+				{
+					id: "in-app-marketplace",
+					label: "In-App Marketplace",
+					href: "/technology-overview#in-app-marketplace",
+					imgUrl: "https://acdn.dnamicro.net/instaprotek/nav_technology_overview-in_app_marketplace.png",
+					imgAlt: 'instaProtek In-App Marketplace'
+				},
+				{
+					id: "product-pages",
+					label: "Product Pages",
+					href: "/technology-overview#product-pages",
+					imgUrl: "https://acdn.dnamicro.net/instaprotek/instaprotek-tech-overview-product-page.png",
+					imgAlt: 'instaProtek Product Pages'
 				},
 			]
 		},
@@ -137,7 +177,7 @@ export const card = [
 		btnUrl: '',
 		imgUrl: 'https://acdn.dnamicro.net/instaprotek/instaprotek-retail-automated-product-reviews.png',
 		imgAlt: 'instaProtek Retail AI Driven Automated Product Reviews',
-		scrollTarget: 'ai-driven-automated-product-reviews'
+		scrollTarget: 'automated-product-reviews'
 	},
 ]
 
@@ -153,7 +193,7 @@ export const footer_items = [{
 		},
 		{
 			id: 'app-store-logo',
-			imgUrl: 'https://acdn.dnamicro.net/instaprotek/download_app_store_transparent.png',
+			imgUrl: 'https://acdn.dnamicro.net/instaprotek/download_on_app_store.png',
 			imgAlt: 'App Store Logo',
 			href: 'https://apps.apple.com/us/app/instaprotek/id1456989327',
 			width: 120,
@@ -162,7 +202,7 @@ export const footer_items = [{
 		},
 		{
 			id: 'google-play-logo',
-			imgUrl: 'https://acdn.dnamicro.net/instaprotek/download_google_play_transparent.png',
+			imgUrl: 'https://acdn.dnamicro.net/instaprotek/download_on_google_play.png',
 			imgAlt: 'Google Play Logo',
 			href: 'https://play.google.com/store/apps/details?id=com.instaprotek.app&hl=en',
 			width: 120,
@@ -214,9 +254,9 @@ export const footer_items = [{
 					href: '/retail#intelligent-analytics',
 				},
 				{
-					id: 'ai-driven-automated-product-reviews',
-					label: 'Automated Product Reviews',
-					href: '/retail#ai-driven-automated-product-reviews',
+					id: 'automated-product-reviews',
+					label: 'AI Driven Automated Product Reviews',
+					href: '/retail#automated-product-reviews',
 				},
 			]
 		},
@@ -262,29 +302,24 @@ export const footer_items = [{
 				},
 			]
 		},
+		// {
+		// 	id: 'footer_partner_with_us',
+		// 	label: 'Partner With Us',
+		// 	href: '/partner-with-us',
+		// 	links: []
+		// },
 		{
 			id: 'footer_get-in-touch',
 			label: 'Get In Touch',
 			href: '/',
-			links: [
-				// {
-				// 	id: 'footer_phone-number',
-				// 	label: '(949) 242-3670',
-				// 	href: '',
-				// },
-				// {
-				// 	id: 'footer_address-location',
-				// 	label: '1 Wrigley, Irvine, CA 92618',
-				// 	href: '',
-				// },
-			]
+			links: []
 		},
 	],
 	footer_about_links: [
 		{
-			id: 'footer_partner-with-us',
-			label: 'Partner With Us',
-			href: '/contact'
+			id: 'footer_articles',
+			label: 'Articles',
+			href: '/articles'
 		},
 		{
 			id: 'footer_privacy',
@@ -297,9 +332,14 @@ export const footer_items = [{
 			href: '/support'
 		},
 		{
-			id: 'footer_terms-and-conditions',
-			label: 'Terms and Conditions',
-			href: '/terms'
+			id: 'footer_retail_terms-and-conditions',
+			label: 'Retail Terms & Conditions',
+			href: '/terms/retail'
+		},
+		{
+			id: 'footer_enterprise_terms-and-conditions',
+			label: 'Enterprise Terms & Conditions',
+			href: '/terms/enterprise'
 		},
 	]
 }]
@@ -334,13 +374,13 @@ export const device_types = [
 export const marketing_solutions = [
 	{
 		id: "marketing-icon-1",
-		imgUrl: 'https://acdn.dnamicro.net/instaprotek/tune-bullet.png',
+		imgUrl: 'https://acdn.dnamicro.net/instaprotek/tune-bullet-v2.png',
 		imgAlt: 'settings icon',
 		description: 'Serve your customers and products with customized protection plans.'
 	},
 	{
 		id: "marketing-icon-2",
-		imgUrl: 'https://acdn.dnamicro.net/instaprotek/lightning-bullet.png',
+		imgUrl: 'https://acdn.dnamicro.net/instaprotek/lightning-bullet-v2.png',
 		imgAlt: 'lightning icon',
 		description: 'Make it easy for customers to register products and submit service requests.'
 	},
@@ -352,13 +392,13 @@ export const marketing_solutions = [
 	},
 	{
 		id: "marketing-icon-4",
-		imgUrl: 'https://acdn.dnamicro.net/instaprotek/hand-bullet.png',
+		imgUrl: 'https://acdn.dnamicro.net/instaprotek/hand-bullet-v2.png',
 		imgAlt: 'hand icon',
 		description: 'Take the hassle out of warranty administration and product support.'
 	},
 	{
 		id: "marketing-icon-5",
-		imgUrl: 'https://acdn.dnamicro.net/instaprotek/heart-bullet.png',
+		imgUrl: 'https://acdn.dnamicro.net/instaprotek/heart-bullet-v2.png',
 		imgAlt: 'heart review icon',
 		description: 'Increase customer engagement with product reviews and upsell opportunities.'
 	},
@@ -382,7 +422,6 @@ export const winning_solutions = [
 		imgUrl: "https://acdn.dnamicro.net/instaprotek/instaprotek-enterprise-accidental-damage-plans.png",
 		imgAlt: 'instaProtek Enterprise Accidental Damage Plans',
 		rowReverse: true,
-		containerStyle: 'my-10 lg:my-[8em]'
 	},
 	{
 		id: "buy-back-device-lifecycle-management",
@@ -392,7 +431,6 @@ export const winning_solutions = [
 		imgUrl: "https://acdn.dnamicro.net/instaprotek/instaprotek-enterprise-buy-back-device.png",
 		imgAlt: 'instaProtek Device Buyback Lifecycle Management',
 		rowReverse: false,
-		containerStyle: 'mb-[3em]'
 	},
 ]
 
@@ -404,16 +442,14 @@ export const solution_suite = [
 		imgUrl: "https://acdn.dnamicro.net/instaprotek/instaprotek-retail-product-guaranteee.png",
 		imgAlt: 'instaProtek Retail Product Guarantee',
 		rowReverse: false,
-		containerStyle: 'mb-5 lg:mb-[8em]'
 	},
 	{
 		id: "warranty-management",
 		label: "Warranty Management",
-		description: 'Introducing our enhanced product warranty: cutting costs, elevating experiences, and fortifying trust. With advanced fraud prevention, we ensure your peace of mind and confidence in every purchase. Make it easy to incentivize platform adoption AND add value to all of your products.',
+		description: 'Introducing our enhanced product warranty: cutting costs, elevating experiences, and fortifying trust. With advanced fraud prevention, we ensure your peace of mind and confidence in every purchase. Make it easy to incentivize platform adoption AND add value to all of your products.',
 		imgUrl: "https://acdn.dnamicro.net/instaprotek/instaprotek-retail-warranty-management.jpg",
 		imgAlt: 'instaProtek Retail Warranty Management',
 		rowReverse: true,
-		containerStyle: 'mb-5 lg:mb-[8em]'
 	},
 	{
 		id: "intelligent-analytics",
@@ -422,36 +458,34 @@ export const solution_suite = [
 		imgUrl: "https://acdn.dnamicro.net/instaprotek/instaprotek-retail-intelligent-analytics.jpeg",
 		imgAlt: 'instaProtek Retail Intelligent Analytics',
 		rowReverse: false,
-		containerStyle: 'mb-5 lg:mb-[8em]'
 	},
 	{
-		id: "ai-driven-automated-product-reviews",
+		id: "automated-product-reviews",
 		label: "AI Driven Automated Product Reviews",
 		description: 'AI driven, automated and <b>REAL-TIME</b>; our review generation process leads to the highest 5-star review conversion in the industry and the fastest and easiest review process for your customers. instaProtek’s unique product review approach results in:',
 		imgUrl: "https://acdn.dnamicro.net/instaprotek/instaprotek-retail-automated-product-reviews.png",
 		imgAlt: 'instaProtek Retail AI Driven Automated Product Reviews',
 		rowReverse: true,
-		containerStyle: 'mb-5 lg:mb-[3em]',
 		withList: true,
 		list: [
 			{
 				item: 'More customers leaving reviews',
-				iconUrl: 'https://acdn.dnamicro.net/instaprotek/gradient-check-bullet.png',
+				iconUrl: 'https://acdn.dnamicro.net/instaprotek/gradient-check-bullet-v2.png',
 				iconAlt: 'Gradient Check Bullet'
 			},
 			{
 				item: 'Customizable syndication',
-				iconUrl: 'https://acdn.dnamicro.net/instaprotek/gradient-check-bullet.png',
+				iconUrl: 'https://acdn.dnamicro.net/instaprotek/gradient-check-bullet-v2.png',
 				iconAlt: 'Gradient Check Bullet'
 			},
 			{
 				item: 'Real-time reviews',
-				iconUrl: 'https://acdn.dnamicro.net/instaprotek/gradient-check-bullet.png',
+				iconUrl: 'https://acdn.dnamicro.net/instaprotek/gradient-check-bullet-v2.png',
 				iconAlt: 'Gradient Check Bullet'
 			},
 			{
 				item: 'Lower cost per review',
-				iconUrl: 'https://acdn.dnamicro.net/instaprotek/gradient-check-bullet.png',
+				iconUrl: 'https://acdn.dnamicro.net/instaprotek/gradient-check-bullet-v2.png',
 				iconAlt: 'Gradient Check Bullet'
 			}
 		]
@@ -585,19 +619,19 @@ export const technology_overview = [
 	{
 		id: "experience-1",
 		description: "Easy Product Registration",
-		iconUrl: "https://acdn.dnamicro.net/instaprotek/lightning-bullet.png",
+		iconUrl: "https://acdn.dnamicro.net/instaprotek/lightning-bullet-v2.png",
 		iconAlt: "lightning bullet",
 	},
 	{
 		id: "experience-2",
 		description: "In-App Self Service Request Process",
-		iconUrl: "https://acdn.dnamicro.net/instaprotek/hand-bullet.png",
+		iconUrl: "https://acdn.dnamicro.net/instaprotek/hand-bullet-v2.png",
 		iconAlt: "hand bullet",
 	},
 	{
 		id: "experience-3",
 		description: "Collect Product Reviews",
-		iconUrl: "https://acdn.dnamicro.net/instaprotek/like-bullet.png",
+		iconUrl: "https://acdn.dnamicro.net/instaprotek/like-bullet-v2.png",
 		iconAlt: "like bullet",
 	},
 	{
@@ -708,19 +742,19 @@ export const product_pages = [
 	{
 		id: "experience-1",
 		description: "instaProtek’s mobile app gives the consumer an enriched shopping experience.",
-		iconUrl: "https://acdn.dnamicro.net/instaprotek/gradient-check-bullet.png",
+		iconUrl: "https://acdn.dnamicro.net/instaprotek/gradient-check-bullet-v2.png",
 		iconAlt: "",
 	},
 	{
 		id: "experience-2",
 		description: "By scanning a product barcode, consumers get quick access to product information that influences their shopping decisions.",
-		iconUrl: "https://acdn.dnamicro.net/instaprotek/gradient-check-bullet.png",
+		iconUrl: "https://acdn.dnamicro.net/instaprotek/gradient-check-bullet-v2.png",
 		iconAlt: "",
 	},
 	{
 		id: "experience-3",
 		description: "Consumers trust the instaProtek shield as a commitment to quality.",
-		iconUrl: "https://acdn.dnamicro.net/instaprotek/gradient-check-bullet.png",
+		iconUrl: "https://acdn.dnamicro.net/instaprotek/gradient-check-bullet-v2.png",
 		iconAlt: "",
 	},
 ]
@@ -732,6 +766,8 @@ export const brand_details: {
 		imgAlt: string;
 		height: number;
 		width: number;
+		isSecondaryLogo?: boolean;
+		resize?: boolean;
 	};
 } = {
 	a1: {
@@ -739,59 +775,87 @@ export const brand_details: {
 		imgAlt: "Liquipel logo",
 		height: 80,
 		width: 210,
+		isSecondaryLogo: true,
+		resize: true,
 	},
 	a2: {
 		logo: "https://acdn.dnamicro.net/instaprotek/instaprotek-sp-ijoy.png",
 		imgAlt: "IJOY logo",
 		height: 70,
 		width: 120,
+		isSecondaryLogo: true,
+		resize: false,
 	},
 	a3: {
 		logo: "https://acdn.dnamicro.net/instaprotek/instaprotek-sp-iwalk.png",
 		imgAlt: "IWalk logo",
 		height: 70,
-		width: 280,
+		width: 210,
+		isSecondaryLogo: true,
+		resize: true,
 	},
 	a4: {
 		logo: "https://acdn.dnamicro.net/instaprotek/instaprotek-shield.png",
 		imgAlt: "instaProtek shield",
 		height: 180,
 		width: 150,
+		isSecondaryLogo: false,
+		resize: false,
 	},
 	a5: {
 		logo: "https://acdn.dnamicro.net/instaprotek/instaprotek-sp-tech21.png",
 		imgAlt: "Tech21 logo",
 		height: 70,
 		width: 180,
+		isSecondaryLogo: true,
+		resize: false,
 	},
 	a14: {
 		logo: "https://acdn.dnamicro.net/instaprotek/instaprotek-shield.png",
 		imgAlt: "instaProtek Shield",
 		height: 180,
 		width: 150,
+		isSecondaryLogo: false,
+		resize: false,
 	},
 	a20: {
 		logo: "https://acdn.dnamicro.net/instaprotek/instaprotek-sp-otterbox.png",
 		imgAlt: "OtterBox logo",
 		height: 100,
 		width: 160,
+		isSecondaryLogo: true,
+		resize: false,
 	},
 	a35: {
 		logo: "https://acdn.dnamicro.net/instaprotek/instaprotek-sp-simple.png",
 		imgAlt: "Simple logo",
 		height: 70,
 		width: 120,
+		isSecondaryLogo: true,
+		resize: false,
 	},
 	a54: {
 		logo: "https://acdn.dnamicro.net/instaprotek/instaprotek-sp-powelab.png",
 		imgAlt: "PowerLab logo",
 		height: 44,
-		width: 280,
+		width: 210,
+		isSecondaryLogo: true,
+		resize: true,
 	},
 	otterprotect: {
 		logo: "https://acdn.dnamicro.net/instaprotek/otterbox-shield.png",
 		imgAlt: "OtterBox logo",
 		height: 180,
 		width: 150,
+		isSecondaryLogo: false,
+		resize: false,
 	},
 };
+
+export const default_brands = [
+	"a6", "a9", "a10", "a11", "a12", "a13", "a16", "a17", "a18", "a19", 
+	"a21", "a23", "a24", "a25", "a26", "a27", "a28", "a29", "a34", "a37",
+	"a38", "a40", "a41", "a42", "a43", "a44", "a45", "a50", "a51", "a52",
+	"a53", "a55", "a56", "a57", "a58", "a60", "a61", "a66", "a67", "a68",
+	"a69", "a70", "a71",
+];

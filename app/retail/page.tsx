@@ -17,7 +17,7 @@ export default function Retail() {
 				id="solution-suite"
 				title="Solution Suite"
 				description="instaProtek's customer experience platform utilizes limited warranty and/or product guarantee programs with product re-marketing, product reviews and intelligent analytics into one easy-to-use and scalable platform."
-				isBlogs
+				isArticle
 			/>
 			{solution_suite.map((a) => (
 				<SectionV2
@@ -28,7 +28,6 @@ export default function Retail() {
 					imgUrl={a.imgUrl}
 					imgAlt={a.imgAlt}
 					rowReverse={a.rowReverse}
-					contentStyle={a.containerStyle}
 					withList={a.withList}
 				/>
 			))}

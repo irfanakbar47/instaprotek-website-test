@@ -1,7 +1,7 @@
 import { useCallback, RefObject } from 'react';
 import { scrollToPosition } from '@/utils/scrollUtils';
 
-const useScrollToTop = (contentRef: RefObject<HTMLElement> | null) => {
+const useScrollToTop = (contentRef: RefObject<HTMLElement | HTMLDivElement | null> | null) => {
   const scrollBehavior = 'smooth';
   return useCallback(() => {
     if (contentRef?.current) {

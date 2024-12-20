@@ -9,7 +9,6 @@ const SectionV6 = () => {
       topTitle="Winning Solutions"
       description="instaProtek combines a competitive warranty program with advanced marketing solutions."
       contentStyle="lg:w-[975px]"
-			containerStyle="!pb-0 !pt-10"
     >
       <div className="flex maxContent gap-y-7 flex-col lg:gap-x-3 lg:flex-row lg:mb-0">
         {marketing_solutions.map((item) => (
@@ -22,7 +21,7 @@ const SectionV6 = () => {
               style={{ width: `40px`, height: `40px`, marginBottom: '16px' }}
               priority
 						/>
-            <p className="text-base break-words">
+            <p className="text-base break-words text-blue-primary1">
               {item.description}
             </p>
           </div>

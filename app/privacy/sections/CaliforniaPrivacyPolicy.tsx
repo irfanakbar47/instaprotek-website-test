@@ -1,6 +1,7 @@
 import React from 'react';
 import { ContentSection } from '@/components';
 import { informationWeCollectTable } from '@/data';
+import Link from 'next/link';
 
 const CaliforniaPrivacyPolicy = () => {
     return (
@@ -19,33 +20,35 @@ const CaliforniaPrivacyPolicy = () => {
             <p>In particular, we have collected the following categories of personal information from consumers within the last twelve (12) months:</p>
 
             {/* Information We Collect (TABLE) - Start */}
-            <table className="min-w-full border border-gray-300 border-separate border-spacing-0">
-                <thead>
-                    <tr>
-                        <th className="border border-gray-300 px-4 py-2 text-left">Category</th>
-                        <th className="border border-gray-300 px-4 py-2 text-left">Examples</th>
-                        <th className="border border-gray-300 px-4 py-2 text-left">Collected</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {informationWeCollectTable.map((row, index) => (
-                        <tr key={index}>
-                            <td className="border border-gray-300 px-4 py-2">{row.category}</td>
-                            <td className="border border-gray-300 px-4 py-2">
-                                <div className="space-y-2">
-                                    {Array.isArray(row.examples)
-                                        ? row.examples.map((example, i) => (
-                                            <p key={i}>{example}</p>
-                                        ))
-                                        : <p>{row.examples}</p>
-                                    }
-                                </div>
-                            </td>
-                            <td className="border border-gray-300 px-4 py-2 text-center">{row.collected}</td>
+            <div className="overflow-x-auto">
+                <table className="min-w-full border border-gray-300 border-separate border-spacing-0">
+                    <thead>
+                        <tr>
+                            <th className="border border-gray-300 px-1 lg:px-4 py-2 text-left">Category</th>
+                            <th className="border border-gray-300 px-1 lg:px-4 py-2 text-left">Examples</th>
+                            <th className="border border-gray-300 px-1 lg:px-4 py-2 text-left">Collected</th>
                         </tr>
-                    ))}
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                        {informationWeCollectTable.map((row, index) => (
+                            <tr key={index}>
+                                <td className="border border-gray-300 px-1 lg:px-4 py-2">{row.category}</td>
+                                <td className="border border-gray-300 px-1 lg:px-4 py-2">
+                                    <div className="space-y-2">
+                                        {Array.isArray(row.examples)
+                                            ? row.examples.map((example, i) => (
+                                                <p key={i}>{example}</p>
+                                            ))
+                                            : <p>{row.examples}</p>
+                                        }
+                                    </div>
+                                </td>
+                                <td className="border border-gray-300 px-1 lg:px-4 py-2 text-center">{row.collected}</td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+            </div>
             {/* Information We Collect (TABLE) - End */}
 
             <p>We obtain the categories of personal information listed above from the following categories of sources identified in our Privacy Policy:</p>
@@ -75,7 +78,7 @@ const CaliforniaPrivacyPolicy = () => {
                 <li>Right to Non-Discrimination: We will not discriminate against you for exercising any of your CCPA rights. Unless permitted by the CCPA, we will not: (i) deny you goods or services; (ii) charge you different prices or rates for goods or services, including through granting discounts or other benefits, or imposing penalties; (iii) provide you a different level or quality of goods or services; or (iv) suggest that you may receive a different price or rate for goods or services or a different level or quality of goods or services.</li>
             </ul>
 
-            <p>To exercise your rights to know or delete described above, please submit a request by either emailing us at&nbsp;<a href="mailto:support@instaprotek.com" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800">support@instaprotek.com</a>&nbsp;with the subject line: CCPA REQUEST. Only you, or someone legally authorized to act on your behalf, may make a request to know or delete related to your Personal Information. You may only submit a request to know twice within a 12-month period.</p>
+            <p>To exercise your rights to know or delete described above, please submit a request by either emailing us at&nbsp;<Link href="mailto:support@instaprotek.com" target="_blank" rel="noopener noreferrer" className="text-green-primary1 hover:text-green-300">support@instaprotek.com</Link>&nbsp;with the subject line: CCPA REQUEST. Only you, or someone legally authorized to act on your behalf, may make a request to know or delete related to your Personal Information. You may only submit a request to know twice within a 12-month period.</p>
 
             <p>Your request to know or delete must provide sufficient information that allows us to reasonably verify you are the person about whom we collected Personal Information or an authorized representative, which may include providing us with your name, email address, physical address, and other information we may need to verify you identity, which varies depending on your relationship with us. We cannot respond to your request or provide you with Personal Information if we cannot verify your identity or authority to make the request and confirm the Personal Information relates to you.</p>
             {/* Your Rights and Choices - End */}
@@ -90,11 +93,11 @@ const CaliforniaPrivacyPolicy = () => {
             <p>If you have any questions or comments about this notice, the ways in which instaProtek collects and uses your information described here and in the Privacy Policy, your choices and rights regarding such use, or wish to exercise your rights under California law, please do not hesitate to contact us at:</p>
 
             <div className="font-bold">
-                <p>https://www.instaprotek.com</p>
+                <Link href="/" className="text-green-primary1 hover:text-green-300">https://www.instaprotek.com</Link>
                 <p>1 Wrigley</p>
                 <p>Irvine, CA 92618</p>
                 <p>U.S.A</p>
-                <p>support@instaprotek.com</p>
+                <Link href="mailto:support@instaprotek.com" className="text-green-primary1 hover:text-green-300">support@instaprotek.com</Link>
             </div>
             {/* Contact Information - End*/}
         </ContentSection>

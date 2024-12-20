@@ -1,6 +1,7 @@
 'use client'
 
 import React from 'react'
+import { useRouter } from 'next/navigation';
 import { FaChevronRight } from "react-icons/fa6";
 import { Button, CustomImage } from '@/components';
 import { useSmoothScroll } from '@/hooks';
@@ -9,6 +10,7 @@ import { IHeroV2Props } from './HeroInterface';
 const HeroV2 = (props: IHeroV2Props) => {
 	const { subheading, background, heroImg, imgAlt, isRetail, scrollTarget, containerStyle, innerContainerStyle } = props
 	const scrollTo = useSmoothScroll();
+	const router = useRouter();
 
 	return (
 		<section className={`relative overflow-hidden bg-[${background}] ${containerStyle}`}>
@@ -17,7 +19,7 @@ const HeroV2 = (props: IHeroV2Props) => {
 			</video> */}
 			<div className={`maxContent m-auto flex items-center mt-[80px] pt-[40px] flex-col lg:flex-row ${innerContainerStyle} ${isRetail && 'flex-col-reverse justify-end gap-y-[40px] lg:flex-row'}`}>
 				<div className='flex flex-col pr-0 lg:mb-10 lg:pr-10'>
-					<h1 className={`text-blue-primary1 mb-8 font-semibold lg:leading-[86px] tracking-normal text-center text-1xl md:text-3.5xl lg:text-left lg:text-[56px]`}>
+					<h1 className={`text-blue-primary1 mb-8 font-semibold lg:leading-[86px] tracking-normal text-center text-1xl md:text-3.5xl lg:text-left lg:text-[53px]`}>
 						{isRetail ? (
 							<span>
 								Drive sales, reviews and customer loyalty in an <span className='font-bold'>INSTANT</span>
@@ -41,23 +43,18 @@ const HeroV2 = (props: IHeroV2Props) => {
 							)}
 						</p>
 					)}
-					{isRetail && (
-						<Button 
-							type="button" 
-							label="Read More" 
-							icon={<FaChevronRight />} 
-							iconPos="right"
-							customStyle={`mx-auto mb-[2em] lg:mb-0 lg:ml-0`}
-							onClick={() => {
-								if (scrollTarget) {
-									scrollTo(scrollTarget)
-								}
-							}}
-						/>
-					)}
+
+					<Button
+						type="button"
+						label="Read More"
+						icon={<FaChevronRight />}
+						iconPos="right"
+						customStyle={`mx-auto mb-[2em] lg:mb-0 lg:ml-0`}
+						onClick={() => router.push('/articles/instaprotek-unveils-patented-navigation-system-with-groundbreaking-analytics-capabilities')}
+					/>
 				</div>
 
-				<CustomImage 
+				<CustomImage
 					src={heroImg}
 					alt={imgAlt}
 					width={600}

@@ -16,8 +16,8 @@ const PlatformOverview = () => {
 					<p className="platform-circle right-20 bottom-16 md:right-48 lg:bottom-24 lg:right-32">Data collection, storage, retrieval, reporting</p>
 				</div>
 				<CustomImage 
-					src="https://acdn.dnamicro.net/instaprotek/instaprotek-platform-overview-var2.png"
-					alt=""
+					src="https://acdn.dnamicro.net/instaprotek/instaprotek-tech-overview-platform-overview-v2.png"
+					alt="instaProtek Platform Overview"
 					width={886.2}
 					height={500}
 					className='w-auto h-[180px] md:h-[300px] lg:h-[350px] xl:h-[500px]'

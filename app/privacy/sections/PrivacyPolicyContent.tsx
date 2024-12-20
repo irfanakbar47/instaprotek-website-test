@@ -1,5 +1,6 @@
 import React from 'react';
 import { ContentSection } from '@/components';
+import Link from 'next/link';
 
 const PrivacyPolicyContent = () => {
   return (
@@ -97,9 +98,9 @@ const PrivacyPolicyContent = () => {
 
         <p>You can also find additional information on cookie controls and advertisement here:</p>
         <ul className="list-disc space-y-2 pl-12 square-bullet">
-          <li><a href="https://optout.networkadvertising.org/?c=1#!%2F" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800">Network Advertising Initiative</a></li>
-          <li><a href="https://optout.networkadvertising.org/?c=1#!%2F" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800">Digital Advertising Alliance</a></li>
-          <li><span>Google&nbsp;</span>allows users to opt out of tracking by Google Analytics and Google Analytics Demographics and Interest Reporting services. You can adjust your setting&nbsp;<a href="chrome://settings/cookies" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800">here</a>, or download the&nbsp;<a href="https://chrome.google.com/webstore/detail/google-analytics-opt-out/fllaojicojecljbmefodhfapmkghcbnh?hl=en" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800">Google Analytics Opt-Out Browser Add-on</a>.</li>
+          <li><Link href="https://optout.networkadvertising.org/?c=1#!%2F" target="_blank" rel="noopener noreferrer" className="text-green-primary1 hover:text-green-300">Network Advertising Initiative</Link></li>
+          <li><Link href="https://optout.networkadvertising.org/?c=1#!%2F" target="_blank" rel="noopener noreferrer" className="text-green-primary1 hover:text-green-300">Digital Advertising Alliance</Link></li>
+          <li><span>Google&nbsp;</span>allows users to opt out of tracking by Google Analytics and Google Analytics Demographics and Interest Reporting services. You can adjust your setting&nbsp;<Link href="chrome://settings/cookies" target="_blank" rel="noopener noreferrer" className="text-green-primary1 hover:text-green-300">here</Link>, or download the&nbsp;<Link href="https://chrome.google.com/webstore/detail/google-analytics-opt-out/fllaojicojecljbmefodhfapmkghcbnh?hl=en" target="_blank" rel="noopener noreferrer" className="text-green-primary1 hover:text-green-300">Google Analytics Opt-Out Browser Add-on</Link>.</li>
         </ul>
       </ContentSection>
 
@@ -167,9 +168,9 @@ const PrivacyPolicyContent = () => {
       <ContentSection id="your-choices" title="Your Choices Regarding Your Personal Information">
         <p>We give you choices regarding our use and disclosure of your Personal Information for certain purposes. You may opt-out from:</p>
         <ul className="list-disc space-y-2 pl-12 square-bullet">
-          <li><span className="font-bold">Receiving Electronic Communications From Us:&nbsp;</span>If you no longer want to receive marketing-related emails from us on a going-forward basis, you may opt-out by following the instructions in each such email or sending an email to&nbsp;<a href="mailto:support@instaprotek.com" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800">support@instaprotek.com</a>&nbsp;with Unsubscribe in the subject line.</li>
+          <li><span className="font-bold">Receiving Electronic Communications From Us:&nbsp;</span>If you no longer want to receive marketing-related emails from us on a going-forward basis, you may opt-out by following the instructions in each such email or sending an email to&nbsp;<Link href="mailto:support@instaprotek.com" target="_blank" rel="noopener noreferrer" className="text-green-primary1 hover:text-green-300">support@instaprotek.com</Link>&nbsp;with Unsubscribe in the subject line.</li>
           <li><span className="font-bold">Opt-Out of Text Message Marketing.&nbsp;</span>If you are receiving promotional texts from instaProtek and would like to &quot;opt out&quot; of receiving promotional texts, please reply &quot;STOP&quot; to the text. Be sure to send the text from the phone number that is listed in your account and on which you are receiving the promotional texts.</li>
-          <li><span className="font-bold">Google Analytics:</span>&nbsp;We use Google&#39;s website analytics services. For more information about how Google uses this data, you can visit:&nbsp;<a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800">How Google uses data when you use our partners&#39; sites or apps.</a>&nbsp;Additionally, you can use the Google Analytics opt-out browser add-on to opt-out of having your activity on instaProtek Website available to Google Analytics by installing the&nbsp;<a href="https://chrome.google.com/webstore/detail/google-analytics-opt-out/fllaojicojecljbmefodhfapmkghcbnh?hl=en" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800">Google Analytics Opt-Out Browser Add-on.</a>&nbsp;The add-on prevents the Google Analytics JavaScript (gtag.js, analytics.js) that is running on websites from sharing information with Google Analytics about visit activity.</li>
+          <li><span className="font-bold">Google Analytics:</span>&nbsp;We use Google&#39;s website analytics services. For more information about how Google uses this data, you can visit:&nbsp;<Link href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener noreferrer" className="text-green-primary1 hover:text-green-300">How Google uses data when you use our partners&#39; sites or apps.</Link>&nbsp;Additionally, you can use the Google Analytics opt-out browser add-on to opt-out of having your activity on instaProtek Website available to Google Analytics by installing the&nbsp;<Link href="https://chrome.google.com/webstore/detail/google-analytics-opt-out/fllaojicojecljbmefodhfapmkghcbnh?hl=en" target="_blank" rel="noopener noreferrer" className="text-green-primary1 hover:text-green-300">Google Analytics Opt-Out Browser Add-on.</Link>&nbsp;The add-on prevents the Google Analytics JavaScript (gtag.js, analytics.js) that is running on websites from sharing information with Google Analytics about visit activity.</li>
         </ul>
       </ContentSection>
 
@@ -181,7 +182,7 @@ const PrivacyPolicyContent = () => {
 
       <ContentSection id="access-change-deletion" title="How You Can Access, Change, or Request Deletion of Your Personal Information">
         <p>
-          If you would like to request to access, correct, or request deletion Personal Information, or if you would like to request to receive an electronic copy of your Personal Information, you may contact us by sending an email to&nbsp;<a href="mailto:support@instaprotek.com" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 underline">support@instaprotek.com.</a>&nbsp;We will respond to your request consistent with applicable law. Please note that we may need to retain certain information for recordkeeping or legal purposes.
+          If you would like to request to access, correct, or request deletion Personal Information, or if you would like to request to receive an electronic copy of your Personal Information, you may contact us by sending an email to&nbsp;<Link href="mailto:support@instaprotek.com" target="_blank" rel="noopener noreferrer" className="text-green-primary1 hover:text-green-300 underline">support@instaprotek.com.</Link>&nbsp;We will respond to your request consistent with applicable law. Please note that we may need to retain certain information for recordkeeping or legal purposes.
         </p>
         <p>
           For your protection, we may only implement requests with respect to the Personal Information associated with the particular email address that you use to send us your request, and we may need to verify your identity before implementing your request. We will try to comply with your request as soon as reasonably practicable.
@@ -223,11 +224,11 @@ const PrivacyPolicyContent = () => {
           If you have any questions about this Policy, our practices related to this Site, or if you would like to have us remove your information from our database please contact us at the following:
         </p>
         <div>
-          <p><a href="https://www.instaprotek.com/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800">https://www.instaprotek.com</a></p>
+          <p><Link href="/" target="_blank" rel="noopener noreferrer" className="text-green-primary1 hover:text-green-300">https://www.instaprotek.com</Link></p>
           <p>1 Wrigley</p>
           <p>Irvine, CA 92618</p>
           <p>U.S.A</p>
-          <p><a href="mailto:support@instaprotek.com" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800">support@instaprotek.com</a></p>
+          <p><Link href="mailto:support@instaprotek.com" target="_blank" rel="noopener noreferrer" className="text-green-primary1 hover:text-green-300">support@instaprotek.com</Link></p>
         </div>
       </ContentSection>
     </>

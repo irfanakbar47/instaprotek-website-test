@@ -15,11 +15,11 @@ export default function TechnoOverview() {
 				id="technology-overview"
 				title="Technology Overview"
 				description="Reduce your overhead while offering a quick and streamlined experience for your consumers."
-				containerStyle="bg-blue-primary1"
+				containerStyle="bg-blue-primary1 pb-[3em] lg:!pt-0"
 				titleStyle="!text-white"
 				descriptionStyle="!text-white"
 				imgUrl="https://acdn.dnamicro.net/instaprotek/instaprotek-tech-overview-section.png"
-				imgAlt=""
+				imgAlt="Technology Overview"
 				data={technology_overview}
 				listContainerStyle="!gap-y-10"
 				iconStyle={`w-[31px] h-[31px] md:w-[40px] md:h-[40px] lg:w-[50px] lg:h-[50px]`}
@@ -30,7 +30,7 @@ export default function TechnoOverview() {
 				title="Product Registration"
 				description="Reduce your overhead while offering a quick and streamlined experience for your consumers."
 				data={product_registration}
-				containerStyle="bg-blue-primary1 !py-10"
+				containerStyle="bg-blue-primary1 pb-[3em] lg:!pt-0"
 				titleStyle="!text-white"
 				descriptionStyle="!text-white"
 				customStyle="!text-white"
@@ -42,14 +42,14 @@ export default function TechnoOverview() {
 				description="Transform a frustrating experience for consumers into one of convenience and delight."
 				data={service_requests}
 				imgHeight={400}
-				containerStyle="!pb-0 !pt-10"
+				containerStyle="!pb-0 lg:!pt-0"
 			/>
 			<SectionV8
 				id="customer-support"
 				title="Customer Support"
 				description="instaProtek&apos;s platform is designed to enable consumers to conveniently connect with customer service and receive personalized product support quickly and efficiently."
 				data={customer_support}
-				containerStyle="bg-blue-primary1 !py-10"
+				containerStyle="bg-blue-primary1 pb-[3em] lg:!pt-0"
 				titleStyle="!text-white"
 				descriptionStyle="!text-white"
 				customStyle="!text-white"

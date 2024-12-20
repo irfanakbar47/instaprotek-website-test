@@ -3,10 +3,10 @@ export type TInputFieldProps = {
 	icon: React.ReactNode;
 	id: string;
 	type: string;
-	ref?: string;
 	value: string;
 	rows?: number;
 	isPhone?: boolean;
 	required?: boolean;
 	onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+	errorMessage?: string;
 }

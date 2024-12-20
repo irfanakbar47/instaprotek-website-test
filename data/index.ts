@@ -1,12 +1,13 @@
-import { blogs } from "./blogs/blogs";
-import { faqs, faq_btnGroup } from "./faqs/faqs";
-import { termsSections } from "./terms/terms";
-import { informationWeCollectTable } from "./privacy/privacy";
+import { articles } from "./articles";
+import { faqs, faq_group } from "./faqs";
+import { termsSections, enterpriseTermsSections } from "./terms";
+import { informationWeCollectTable } from "./privacy";
 
 export {
-	blogs,
+	articles,
 	faqs,
-	faq_btnGroup,
+	faq_group,
 	termsSections,
+	enterpriseTermsSections,
 	informationWeCollectTable,
 }

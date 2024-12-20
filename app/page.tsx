@@ -6,16 +6,16 @@ export default function Home() {
 			<Hero
 				subheading
 				background="https://acdn.dnamicro.net/instaprotek/instaprotek-homepage-banner.mp4"
-				heroTitle="Technology-Driven Warranty Solutions"
+				heroTitle="Happy New Year DNA!!!"
 			/>
 			<SectionV3
-				id="blog"
-				topTitle="Blog"
+				id="article"
+				topTitle="News and Articles"
 				title="Latest Insights & Updates"
 				description="Stay Ahead with Our Latest Articles, News, and Announcements"
 				descriptionStyle="w-11/12"
-				btnLabel="See all news"
-				containerStyle="!py-0"
+				btnLabel="See all articles"
+				containerStyle="!py-0 !my-[5em]"
 			/>
 			<SectionV4
 				imgUrl="https://acdn.dnamicro.net/instaprotek/instaprotek-set-your-products-apart.jpg"

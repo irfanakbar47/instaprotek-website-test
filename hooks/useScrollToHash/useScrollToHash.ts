@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-const useScrollToHash = (containerRef: React.RefObject<HTMLDivElement>, offset: number) => {
+const useScrollToHash = (containerRef: React.RefObject<HTMLDivElement | null>, offset: number) => {
   useEffect(() => {
     const scrollToHash = () => {
       const hash = window.location.hash;

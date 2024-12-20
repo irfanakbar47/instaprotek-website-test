@@ -31,8 +31,8 @@ export interface ISectionV2Props {
 
 export interface ISectionV3Props extends ISectionLayoutV1Props, IButtonProps {
 	btnLabel?: string;
-	isBlogs?: boolean;
 	containerStyle?: string;
+	isArticle?: boolean;
 }
 
 export interface ISectionV4Props {

@@ -18,7 +18,7 @@ const SectionV8 = (props: ISectionV8Props) => {
 			<div className={`maxContent flex justify-evenly text-center flex-col lg:flex-row gap-y-14 ${innerContainerStyle}`}>
 				{data.map((item) => (
 					<div key={item.id} className={`flex flex-col items-center gap-y-4 lg:gap-y-10 ${customStyle}`}>
-						<h3 className='font-bold text-base lg:text-lg'>{item.label}</h3>
+						<h3 className='font-bold text-base text-blue-primary1 lg:text-lg'>{item.label}</h3>
 						<div className={customImgStyle}>
 							<CustomImage 
 								src={item.imgUrl}

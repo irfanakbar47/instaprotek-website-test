@@ -1,7 +1,6 @@
-FROM node:18-slim
+FROM node:latest
 
-RUN npm install -g pm2@4
-
+#RUN npm install -g pm2@4
 
 WORKDIR /var/app
 COPY package.json /var/app/package.json
@@ -12,4 +11,4 @@ RUN yarn build
 
 #VOLUME [ "/var/app/log" ]
 #VOLUME [ "/root/.pm2/logs" ]
-CMD ["yarn", "dev"]
+CMD ["yarn", "start"]
