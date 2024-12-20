@@ -25,4 +25,5 @@ RUN yarn build
 EXPOSE 3002
 
 # Command to start the app in development mode
-CMD ["yarn", "dev"]
+CMD ["yarn", "run", "dev", "-p", "3002", "--hostname", "0.0.0.0", "--turbo"]
+#CMD ["yarn", "dev"]
