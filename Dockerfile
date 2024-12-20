@@ -1,23 +1,26 @@
-# Stage 1: Build
-FROM node:18-slim AS build
-
-WORKDIR /var/app
-
-COPY package.json yarn.lock ./
-RUN yarn install --frozen-lockfile
-
-COPY ./ ./
-RUN yarn build
-
-# Stage 2: Production
 FROM node:18-slim
 
+# Install PM2 globally (optional if you use PM2 to run the app in production)
+RUN npm install -g pm2@4
+
+# Set working directory
 WORKDIR /var/app
 
-# Copy only the necessary files from the build stage
-COPY --from=build /var/app /var/app
-RUN yarn install --production --frozen-lockfile
+# Copy package files and install dependencies
+COPY package.json /var/app/package.json
 
-EXPOSE 3000
+# Install dependencies using Yarn
+RUN yarn
 
-CMD ["yarn", "start"]
+# Copy the rest of the application files
+COPY ./ /var/app
+
+# Build the application
+RUN yarn build
+
+# Optionally expose a volume for logs (commented out)
+# VOLUME [ "/var/app/log" ]
+# VOLUME [ "/root/.pm2/logs" ]
+
+# Command to start the app in development mode
+CMD ["yarn", "dev"]
